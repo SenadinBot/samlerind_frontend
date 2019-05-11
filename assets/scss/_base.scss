@@ -1,0 +1,76 @@
+.btn-general {
+    -webkit-transition: all .2s;
+    transition: all .2s;
+    &.transparent-btn {
+        border: 2px solid #D0D0D0;
+        color: #2C263C;
+        padding: 1.38rem 2rem;
+        &:hover {
+            background-color: #2C263C;
+            border-color: #2C263C;
+            color: #ffffff;
+        }
+        &:focus {
+            outline: none;
+            box-shadow: none;
+        }
+    }
+}
+.jarallax {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    @include media-xs {
+        position: relative;
+        height: auto;
+    }
+    @include media-sm {
+        position: relative;
+        height: auto;
+    }
+    @include media-md {
+        position: relative;
+        height: auto;
+    }
+}
+.flex-row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    @include media-xs {
+        display: initial;
+        display: initial;
+        display: block;
+        -ms-flex-wrap: initial;
+            flex-wrap: initial;
+    }
+    &:before,
+    &:after {
+        display: none;
+        display: none;
+    }
+    > [class*='col-'] {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        @include media-xs {
+            display: initial;
+            display: initial;
+            display: block;
+            -webkit-box-orient: initial;
+            -webkit-box-direction: initial;
+            -ms-flex-direction: initial;
+            flex-direction: initial;
+        }
+    }
+}
