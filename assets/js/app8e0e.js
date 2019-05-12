@@ -204,5 +204,14 @@
     $('#modal1').on('hidden.bs.modal', function (e) {
         $('#modal1 iframe').attr("src", $("#modal1 iframe").attr("src"));
     });
-    
+
+    $('.card-header').click(function () {
+        if ($(this).parent().hasClass('active')) {
+            $(this).parent().removeClass('active');
+        } else {
+            $('.card-header').parent().removeClass('active');
+            $(this).parent().addClass('active');
+        }
+    });
+
 })(jQuery);

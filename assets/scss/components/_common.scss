@@ -685,6 +685,21 @@
     }
 }
 .faq-accordion-container {
+    padding: 74px 0 39px 0;
+    @include media-xlg {
+        padding: 108px 0 49px 0;
+    }
+    @include media-sm {
+        padding: 54px 0 30px 0;
+    }
+    @include media-xs {
+        padding: 54px 0 30px 0;
+    }
+    .container {
+        @include media-xs {
+            max-width: 100%;
+        }
+    }
     .faq-intro {
         text-align: center;
         h2 {
@@ -706,7 +721,11 @@
             font-family: 'Poppins', sans-serif;
             font-weight: 500;
             margin: 0 auto;
-            @include media-xs-portrait {
+            @include media-xs {
+                font-size: 16px;
+                line-height: 26px;
+            }
+            @include media-sm {
                 font-size: 16px;
                 line-height: 26px;
             }
@@ -714,10 +733,59 @@
     }
     hr {
         background-color: #DD0600;
+        margin: 40px 0 40px 0;
+        @include media-xlg {
+            margin: 60px 0 55px 0;
+        }
     }
     
     .accordion {
-        button {
+        h2 {
+            font-size: 36px;
+            line-height: 50px;
+            color: #2E273B;
+            font-family: 'Podkova', sans-serif;
+            font-weight: 400;
+            margin-bottom: 25px;
+            @include media-xs-portrait {
+                font-size: 30px;
+                line-height: 38px;
+            }
+        }
+        .card {
+            text-align: left;
+            border-radius: 0;
+            border: 1px solid #E6E6E6;
+            border-bottom: none;
+            -webkit-transition: all .3s ease 0s;
+            -moz-transition: all .3s ease 0s;
+            -o-transition: all .3s ease 0s;
+            transition: all .3s ease 0s;
+            &.active {
+                border: 1px solid #D1001A;
+                &:last-child {
+                    border-bottom: 1px solid #D1001A;
+                }
+            }
+            &:last-child {
+                border-bottom: 1px solid #E6E6E6;
+            }
+        }
+        .card-header {
+            cursor: pointer;
+            border: none;
+            background-color: transparent;
+            -webkit-transition: all .3s ease 0s;
+            -moz-transition: all .3s ease 0s;
+            -o-transition: all .3s ease 0s;
+            transition: all .3s ease 0s;
+            border: none;
+            font-size: 16px;
+            line-height: 24px;
+            color: #313131;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            padding: 14px 32px 14px 16px;
             &:after {
                 content: '';
                 width: 16px;
@@ -726,13 +794,41 @@
                 background-repeat: no-repeat;
                 background-size: cover;
                 position: absolute;
-                top: 0;
-                right: 0;
+                top: 17px;
+                right: 16px;
+                -webkit-transition: all .3s ease 0s;
+                -moz-transition: all .3s ease 0s;
+                -o-transition: all .3s ease 0s;
+                transition: all .3s ease 0s;
+                @include media-xs {
+                    top: 17px;
+                    -webkit-transform: translateY(-50%);
+                    -ms-transform: translateY(-50%);
+                    transform: none;
+                }
             }
             &.collapsed {
                 &:after {
                     background-image: url("../../../assets/imgs/icons/right-icon@2x.png");
+                    @include media-xs {
+                    top: 50%;
+                    -webkit-transform: translateY(-50%);
+                    -ms-transform: translateY(-50%);
+                    transform: translateY(-50%);
+                    }
                 }
+            }
+        }
+        .card-body {
+            border: none;
+            padding: 0px 20px 15px 20px;
+            p {
+                font-size: 16px;
+                line-height: 24px;
+                color: #313131;
+                font-family: 'Poppins', sans-serif;
+                font-weight: 100;
+                margin-bottom: 20px;
             }
         }
     }
